@@ -7,9 +7,10 @@ This app is developed using Angular Seed https://github.com/angular/angular-seed
 To get you started you can simply clone this repository and install the dependencies:
 
 #### Clone this repository
+```
 git clone https://github.com/nomo-kazza/fractalAnagramAssignment.git
 cd fractalAnagramAssignment
-
+```
 #### Install Dependencies
 for prerequisites please check the angular seed [README.md] file:
 ```

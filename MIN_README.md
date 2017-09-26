@@ -1,9 +1,9 @@
 
-### `Fractal Coding Challenge`
+### Fractal Coding Challenge
 Angular web app for displaying the anagrams of the given string.
 This app is developed using Angular Seed https://github.com/angular/angular-seed
 
-### Getting Started
+#### Getting Started
 To get you started you can simply clone this repository and install the dependencies:
 
 #### Clone this repository

@@ -1,25 +1,130 @@
 /* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+* {
+    box-sizing: border-box;
+}
+/* header */
+header {
+    padding: 10px 40px;
+    color: white;
+    background: darkblue;
+}
+/* footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 15px 40px;
+    background: darkcyan;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.menu:before {
-  content: "[";
+.created-by {
+    display: block;
 }
-
-.menu:after {
-  content: "]";
+/* anagram-container */
+.anagram-container {
+    padding: 30px 40px;
 }
-
-.menu > li {
-  display: inline;
+    .input-form label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    .input-form .input-string {
+        display: inline-block;
+        border: 2px solid lightgray;
+        box-shadow: none;
+        padding: 15px;
+        width: 50%;
+    }
+    .input-form .input-string:focus {
+        box-shadow: none;
+        outline: none;
+        border-color: gray;
+    }
+    .anagram-btn {
+        display: inline-block;
+        padding: 15px;
+        margin-left: 30px;
+        background: burlywood;
+        box-shadow: none;
+        border: none;
+        border-radius: 3px;
+    }
+    .anagram-btn:hover,
+    .anagram-btn:focus
+    {
+        background: #bb8f56;
+        outline: none;
+    }
+/* result-container */
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
 }
-
-.menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
+    .result span {
+        margin: 0 10px;
+        display: inline-block;
+        background: aquamarine;
+    }
+/* table style */
+.table-container {
+    padding: 15px 0;
+    margin-bottom: 72px;
+    display: flex;
+    justify-content: space-evenly;
 }
+    table {
+        background: white;
+    }
+        table th {
+            background: darkblue;
+            color: white;
+            width: 30%;
+            padding: 7px 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        table td {
+            padding: 7px 10px;
+            vertical-align: middle;
+            text-align: center;
+        }
+        table tr:nth-child(2n) td {
+            background: lightblue;
+        }
+    /* sort filter section */
+    .sort-filter-row .anagram-btn {
+        margin-left: 0;
+        margin-bottom: 20px;
+        padding: 5px 10px;
+    }
+    .sort-filter-row input {
+        border: 2px solid lightgray;
+        box-shadow: none;
+        padding: 10px;
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .sort-filter-row input:focus {
+        outline: none;
+        border-color: gray;
+    }
+    .sort-indctr {
+        transform: rotate(90deg);
+        display: inline-block;
+        font-weight: bold;
+        transition: all linear 0.2s;
+    }
+    .sort-indctr.desc {
+        transform: rotate(270deg);
+    }
+    .filter-btn label {
+        display: block;
+        margin-bottom: 5px;
+    }

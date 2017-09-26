@@ -1,0 +1,77 @@
+<!-- anagram-container start -->
+<div class="anagram-container">
+    <!-- input-form start -->
+    <div class="input-form">
+        <label for="inputText">Aanagram Text:</label>
+        <input type="text"
+            data-ng-model="inputString"
+            data-ng-change="findAnagram(inputString)"
+            placeholder="Enter the text"
+            class="input-string"
+            id="inputText">
+        <button class="find-anagram-btn anagram-btn" data-ng-click="findAnagram(inputString, true)">Find Anagram</button>
+    </div>
+    <!-- input-form end -->
+
+    <!-- result-container start-->
+    <div class="result-container">
+
+        <!-- result-row start -->
+        <div class="result-row">
+            <p class="result">Result Anagram: <span >{{firstAnagram}}</span></p>
+            <div class="table-toggle">
+                <input type="checkbox"
+                    name="table display"
+                    id="tableDisplay"
+                    data-ng-model="displayTable">
+                <label for="tableDisplay">Display Anagrams Table</label>
+            </div>
+        </div>
+        <!-- result-row end -->
+
+        <!-- table-container start -->
+        <div class="table-container" data-ng-show="displayTable && randomAnagrams.length > 0">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Anagrams</th>
+                        <th>Not Lost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-ng-repeat="anagramObj in anagramObjects | filter : filterText track by $index">
+                        <td>{{anagramObj.anagram}}</td>
+                        <td>
+                            <input type="checkbox"
+                                name="not-lost"
+                                id="notLost{{$index}}"
+                                data-ng-model="anagramObj.selected"
+                                data-ng-change="selectAnagram($index)">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="sort-filter-row">
+                <div class="sort-btn">
+                    <button class="anagram-btn"
+                        data-ng-click="sortTable(anagramObjects)">
+                        Sort By Alphabet
+                        <span class="sort-indctr"
+                            data-ng-class="isSorted ? 'asc' : 'desc'"
+                            data-ng-show="isSorted !== undefine">&lt;</span>
+                    </button>
+                </div>
+                <div class="filter-btn">
+                    <label for="filterText">Filter Text:</label>
+                    <input type="text"
+                        id="filterText"
+                        placeholder="Enter filter text"
+                        data-ng-model="filterText">
+                </div>
+            </div>
+        </div>
+        <!-- table-container end -->
+    </div>
+    <!-- result-container end -->
+</div>
+<!-- anagram-container end -->
